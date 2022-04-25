@@ -29,7 +29,7 @@ public class request_param {
     @Test
     public void handling_query_param_hashmap() {
 
-        HashMap<String, String> paramss = new HashMap<String, String>();
+        HashMap<String,String> paramss = new HashMap<>();
         paramss.put("q", "ho chi minh");
         paramss.put("lang", "vi");
         paramss.put("APPID", "648b4d68e5cc52f2042959093666200e");
