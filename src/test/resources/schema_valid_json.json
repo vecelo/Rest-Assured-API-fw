@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft/2019-09/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "default": {},
+  "title": "Root Schema",
+  "required": [
+    "success",
+    "timestamp",
+    "base",
+    "date",
+    "rates"
+  ],
+  "properties": {
+    "success": {
+      "type": "string",
+      "default": false,
+      "title": "The success Schema",
+      "examples": [
+        true
+      ]
+    },
+    "timestamp": {
+      "type": "integer",
+      "default": 0,
+      "title": "The timestamp Schema",
+      "examples": [
+        1650957783
+      ]
+    },
+    "base": {
+      "type": "string",
+      "default": "",
+      "title": "The base Schema",
+      "examples": [
+        "EUR"
+      ]
+    },
+    "date": {
+      "type": "string",
+      "default": "",
+      "title": "The date Schema",
+      "examples": [
+        "2022-04-26"
+      ]
+    },
+    "rates": {
+      "type": "object",
+      "default": {},
+      "title": "The rates Schema",
+      "required": [
+        "USD"
+      ],
+      "properties": {
+        "USD": {
+          "type": "number",
+          "default": 0.0,
+          "title": "The USD Schema",
+          "examples": [
+            1.069016
+          ]
+        }
+      },
+      "examples": [{
+        "USD": 1.069016
+      }]
+    }
+  },
+  "examples": [{
+    "success": true,
+    "timestamp": 1650957783,
+    "base": "EUR",
+    "date": "2022-04-26",
+    "rates": {
+      "USD": 1.069016
+    }
+  }]
+}
