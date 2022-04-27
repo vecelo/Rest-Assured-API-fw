@@ -2,9 +2,11 @@ package Tests_tab;
 
 import io.restassured.http.Cookie;
 import io.restassured.http.Headers;
+import io.restassured.response.Response;
 import org.testng.annotations.Test;
-
+import static org.hamcrest.Matchers.*;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import static io.restassured.RestAssured.*;
 
@@ -19,7 +21,7 @@ public class response_validation {
         when().
                 get("/lang/{lang}").
         then().
-                log().all().
+                time(lessThan(1200L), TimeUnit.MILLISECONDS).
                 header("content-encoding", "gzip");
     }
 
@@ -49,14 +51,26 @@ public class response_validation {
     @Test
     public void response_header_extract_cookie(){
         Headers hidder2 = given().
-                        baseUri("http://postman-echo.com").
-                        contentType("application/json").
+                            baseUri("http://postman-echo.com").
+                            contentType("application/json").
                         when().
-                        post("/post").
-                        then().extract().headers();
+                            post("/get").
+                        then().log().all().extract().headers();
 
         System.out.println(hidder2.getValue("Cookie"));
 //        System.out.println(hidder2.getValue("Keep-Alive"));
 //        System.out.println(hidder2.getValue("Connection"));
+    }
+
+    @Test
+    public void response_body_extract(){
+        Response resbody = given().
+                            baseUri("http://postman-echo.com").
+                        when().
+                            get("/delay/3").
+//                        then().extract().response();
+                         then().body()
+          String body1 = resbody.path("delay");
+          System.out.println(body1);
     }
 }

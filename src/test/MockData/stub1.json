@@ -1,0 +1,13 @@
+{
+  "request" :  {
+      "method" : "GET",
+      "url" : "/xinchao"
+  },
+  "response" : {
+      "status" : 200,
+      "body" : "This is mock response (response created by dev's)",
+      "headers" : {
+          "Content-Type" : "text/plain"
+      }
+  }
+}

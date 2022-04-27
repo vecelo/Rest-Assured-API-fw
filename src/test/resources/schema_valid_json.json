@@ -13,7 +13,7 @@
   ],
   "properties": {
     "success": {
-      "type": "string",
+      "type": "boolean",
       "default": false,
       "title": "The success Schema",
       "examples": [
