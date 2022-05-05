@@ -68,8 +68,8 @@ public class response_validation {
                             baseUri("http://postman-echo.com").
                         when().
                             get("/delay/3").
-//                        then().extract().response();
-                         then().body()
+                        then().extract().response();
+//                         then().body().extract().response();
           String body1 = resbody.path("delay");
           System.out.println(body1);
     }
