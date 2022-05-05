@@ -7,6 +7,7 @@ Business Need: Microservice can handle all type of request
       Then User nhan duoc ket qua
 
 @P2
+Feature: Handle PUT request
   Scenario: User get response after send PUT request
 
       Given User co address so 3
@@ -14,6 +15,7 @@ Business Need: Microservice can handle all type of request
       Then User nhan duoc ket qua
 
 @T2
+Feature: Handle DELETE request
   Scenario: User get response after send DELETE request
 
     Given User co address so 4
