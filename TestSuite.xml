@@ -1,0 +1,15 @@
+<?xml version = "1.0"encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name = "Suite1">
+    <test name = "Test Demo">
+        <classes>
+<!--            <class name = "testRunner.TestRunner"/>-->
+            <class name="getting_started.NewTest">
+                <methods> 
+                    <exclude name="extract_single_data_from_response"/>
+                </methods>
+            </class>
+            <class name="getting_started.NewTest"></class>
+        </classes>
+    </test>
+</suite>

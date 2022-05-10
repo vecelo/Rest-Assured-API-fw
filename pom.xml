@@ -38,13 +38,31 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-picocontainer -->
+        <!-- https://mvnrepository.com/artifact/io.cucumber/gherkin -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>gherkin</artifactId>
+            <version>23.0.1</version>
+        </dependency>
+
+
+
+
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
 <!--        <dependency>-->
 <!--            <groupId>io.cucumber</groupId>-->
-<!--            <artifactId>cucumber-picocontainer</artifactId>-->
-<!--            <version>7.3.2</version>-->
-<!--            <scope>test</scope>-->
+<!--            <artifactId>cucumber-testng</artifactId>-->
+<!--            <version>7.3.4</version>-->
 <!--        </dependency>-->
+
+
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-picocontainer -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-picocontainer</artifactId>
+            <version>7.3.2</version>
+            <scope>test</scope>
+        </dependency>
 
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
         <dependency>
@@ -55,14 +73,14 @@
 
 
         <!-- https://mvnrepository.com/artifact/net.serenity-bdd/serenity-cucumber -->
-<!--        <dependency>-->
-<!--            <groupId>net.serenity-bdd</groupId>-->
-<!--            <artifactId>serenity-cucumber</artifactId>-->
-<!--            <version>3.2.4</version>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
+<!--       <dependency>-->
+<!--           <groupId>net.serenity-bdd</groupId>-->
+<!--           <artifactId>serenity-cucumber</artifactId>-->
+<!--           <version>3.2.4</version>-->
+<!--           <scope>test</scope>-->
+<!--       </dependency>-->
 
-        <!-- https://mvnrepository.com/artifact/net.serenity-bdd/serenity-cucumber4 -->
+       <!-- https://mvnrepository.com/artifact/net.serenity-bdd/serenity-cucumber4 -->
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-cucumber4</artifactId>
@@ -114,8 +132,6 @@
             <artifactId>scribejava-apis</artifactId>
             <version>8.3.1</version>
         </dependency>
-
-
 
     </dependencies>
 
