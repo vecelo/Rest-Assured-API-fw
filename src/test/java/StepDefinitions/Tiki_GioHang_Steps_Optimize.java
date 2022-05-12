@@ -1,42 +1,41 @@
 package StepDefinitions;
 
-import io.cucumber.java.Before;
+import actions.Common_Actions;
+import actions.TikiGioHang_Actions;
+import elements.TikiGioHang_Elements;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.jruby.RubyProcess;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.junit.Assert.fail;
 
-public class Tiki_GioHang_Steps {
-     WebDriver driver;
+public class Tiki_GioHang_Steps_Optimize {
+//     WebDriver driver;
+    Common_Actions common_actions;
+    TikiGioHang_Actions tikiGioHang_actions;
 
-    public Tiki_GioHang_Steps(Common_Steps abc){
-        this.driver = abc.getDriver();
+    public Tiki_GioHang_Steps_Optimize(Common_Actions common_actions, TikiGioHang_Actions tikiGioHang_actions){
+        this.common_actions = common_actions;
+        this.tikiGioHang_actions = tikiGioHang_actions;
     }
 
     @Given("User on Tiki homepage")
     public void user_on_tiki_homepage() throws Exception {
-        driver.get("https://tiki.vn/");
-        System.out.println("Tiki homepage");
+        common_actions.gotoURL("https://tiki.vn/");
     }
 
     @When("User click on Cart Logo")
     public void user_click_on_cart_logo() throws InterruptedException {
-        driver.findElement(By.className("cart-icon")).click();
+        tikiGioHang_actions.clickCartIcon();
         Thread.sleep(1000);
     }
 
     @Then("User is navigated to Login form")
     public void user_is_navigated_to_Login_form() throws InterruptedException {
         String expectTxt = "Đăng nhập bằng email";
-        String actualTxt = driver.findElement(By.className("login-with-email")).getText();
+        String actualTxt = tikiGioHang_actions.verifyLoginWEmail();
         if (!expectTxt.equals(actualTxt)){
             fail("Element does not available");
         }
@@ -45,7 +44,7 @@ public class Tiki_GioHang_Steps {
     @Then("User is navigated to test form")
     public void user_is_navigated_to_test_form() {
         String expectURL = "https://tiki.vn/checkout/cart?src=header_cart";
-        String actualURL = driver.getCurrentUrl();
+        String actualURL = common_actions.getURLhientai();
         if (!expectURL.equals(actualURL)){
             fail("Page does not available");
         }

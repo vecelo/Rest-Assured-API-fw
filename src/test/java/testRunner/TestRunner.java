@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         glue = {"StepDefinitions"},
         dryRun = true,
         plugin = {"pretty", "html:report.html"},
-        tags = "@TK05"
+        tags = "@TK01"
 //      name = {"DELETE"}
         )
 public class TestRunner {
