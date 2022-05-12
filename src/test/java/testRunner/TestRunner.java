@@ -8,9 +8,9 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "features",
         glue = {"StepDefinitions"},
-        dryRun = false,
+        dryRun = true,
         plugin = {"pretty", "html:report.html"},
-        tags = "@TK01"
+        tags = "@TK05"
 //      name = {"DELETE"}
         )
 public class TestRunner {

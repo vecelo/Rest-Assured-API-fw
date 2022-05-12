@@ -1,7 +1,7 @@
 Feature: Tiki Basic Scenario
 
   @TK01
-  Scenario: User can go to GioHang
+  Scenario: User is redirect to Login form when click GioHang
 
     Given User on Tiki homepage
     When User click on Cart Logo
