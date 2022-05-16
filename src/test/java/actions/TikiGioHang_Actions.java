@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 public class TikiGioHang_Actions {
 
-    private WebDriver driver;
+    private final WebDriver driver;
     TikiGioHang_Elements tikiGioHang_elements;
 
     public TikiGioHang_Actions(Common_Steps abd){

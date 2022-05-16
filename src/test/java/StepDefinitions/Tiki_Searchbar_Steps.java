@@ -1,5 +1,6 @@
 package StepDefinitions;
 
+import actions.Common_Actions;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
@@ -14,8 +15,10 @@ import static org.junit.Assert.fail;
 public class Tiki_Searchbar_Steps {
 
     WebDriver driver;
+    Common_Actions common_actions;
 
-    public Tiki_Searchbar_Steps(Common_Steps abc){
+    public Tiki_Searchbar_Steps(Common_Actions common_actions, Common_Steps abc){
+        this.common_actions = common_actions;
         this.driver = abc.getDriver();
     }
 
@@ -62,13 +65,13 @@ public class Tiki_Searchbar_Steps {
 
     @Then("User validate the {string} and the title {string}")
     public void user_validate_the_and_the_title(String url, String title) {
-        String actURL = driver.getCurrentUrl();
+        String actURL = common_actions.getURLhientai();
         String actTitle = driver.getTitle();
         if(!actURL.equals(url)){
             fail("url ko đúng");
         }
         if(actTitle.contains(title)){
             fail("Title ko đúng");
-        };
+        }
     }
 }

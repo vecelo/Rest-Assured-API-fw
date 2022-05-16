@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "features",
         glue = {"StepDefinitions"},
-        dryRun = true,
+        dryRun = false,
         plugin = {"pretty", "html:report.html"},
         tags = "@TK01"
 //      name = {"DELETE"}

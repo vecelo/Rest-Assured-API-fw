@@ -1,13 +1,17 @@
 package actions;
 
 import StepDefinitions.Common_Steps;
+import dataProvider.ConfigFileReader;
 import org.openqa.selenium.WebDriver;
+
+import java.io.IOException;
 
 public class Common_Actions {
 
-    private WebDriver driver;
+    private final WebDriver driver;
+    ConfigFileReader configFileReader;
 
-    public Common_Actions(Common_Steps common_steps){
+    public Common_Actions(Common_Steps common_steps) throws IOException {
         this.driver = common_steps.getDriver();
     }
 
