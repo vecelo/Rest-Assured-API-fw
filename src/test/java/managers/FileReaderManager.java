@@ -8,7 +8,7 @@ public class FileReaderManager {
     private static final FileReaderManager fileReaderManager = new FileReaderManager();
     private static ConfigFileReader configFileReader;
 
-    private FileReaderManager() {
+    public FileReaderManager() {
     }
 
     public static FileReaderManager getInstance() {

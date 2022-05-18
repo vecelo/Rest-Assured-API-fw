@@ -2,8 +2,10 @@ package StepDefinitions;
 
 import actions.Common_Actions;
 import actions.TikiGioHang_Actions;
+import cucumber.TestContext;
 import dataProvider.ConfigFileReader;
 import elements.TikiGioHang_Elements;
+import enums.Context;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -19,8 +21,11 @@ public class Tiki_GioHang_Steps_Optimize {
     Common_Actions common_actions;
     TikiGioHang_Actions tikiGioHang_actions;
 
+    TestContext testContext;
+
     public Tiki_GioHang_Steps_Optimize(Common_Actions common_actions,
-                                       TikiGioHang_Actions tikiGioHang_actions) throws IOException {
+                                       TikiGioHang_Actions tikiGioHang_actions,
+                                       TestContext context) throws IOException {
         this.common_actions = common_actions;
         this.tikiGioHang_actions = tikiGioHang_actions;
     }

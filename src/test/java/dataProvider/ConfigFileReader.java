@@ -69,4 +69,11 @@ public class ConfigFileReader {
             return Boolean.valueOf(windowSize);
         return true;
     }
+
+    public String getReportPath() {
+        String reportPath = proper.getProperty("reportConfigPath");
+        if (reportPath != null)
+            return reportPath;
+        else throw new RuntimeException("reportConfigPath not specified in the Configuration.properties file.");
+    }
 }

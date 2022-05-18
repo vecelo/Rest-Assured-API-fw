@@ -46,6 +46,19 @@
         </dependency>
 
 
+        <!-- https://mvnrepository.com/artifact/com.vimalselvam/cucumber-extentsreport -->
+        <dependency>
+            <groupId>com.vimalselvam</groupId>
+            <artifactId>cucumber-extentsreport</artifactId>
+            <version>3.0.2</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>3.0.2</version>
+        </dependency>
 
 
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->

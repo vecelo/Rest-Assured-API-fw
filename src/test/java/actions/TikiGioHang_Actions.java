@@ -21,4 +21,8 @@ public class TikiGioHang_Actions {
     public String verifyLoginWEmail(){
         return tikiGioHang_elements.LoginEMailText.getText();
     }
+
+    public String getProductName(){
+        return "Ten cua san pham la iphone";
+    }
 }

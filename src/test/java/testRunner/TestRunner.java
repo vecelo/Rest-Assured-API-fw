@@ -9,9 +9,10 @@ import org.junit.runner.RunWith;
         features = "features",
         glue = {"StepDefinitions"},
         dryRun = false,
-        plugin = {"pretty", "html:report.html"},
+        plugin = {"pretty", "html:target/baocao.html"},
+//        name = {"DELETE"},
+//        plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/baocao.html"},
         tags = "@TK01"
-//      name = {"DELETE"}
         )
 public class TestRunner {
-}
+        }

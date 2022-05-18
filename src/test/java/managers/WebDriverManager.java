@@ -2,7 +2,6 @@ package managers;
 
 import enums.DriverType;
 import enums.EnvironmentType;
-import net.thucydides.core.webdriver.WebdriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -16,6 +15,7 @@ public class WebDriverManager {
     private static DriverType driverType;
     private static EnvironmentType environmentType;
     private static final String CHROME_DRIVER_PROPERTY = "webdriver.chrome.driver";
+    private static final String FIREFOX_DRIVER_PROPERTY = "webdriver.gecko.driver";
 
     public WebDriverManager() throws IOException {
         driverType = FileReaderManager.getInstance().getConfigReader().getBrowser();
@@ -46,17 +46,26 @@ public class WebDriverManager {
     private WebDriver createLocalDriver() throws IOException {
         switch (driverType) {
             case FIREFOX:
+                System.setProperty(FIREFOX_DRIVER_PROPERTY, FileReaderManager
+                                                            .getInstance()
+                                                            .getConfigReader()
+                                                            .getDriverPath());
                 driver = new FirefoxDriver();
                 break;
             case CHROME:
-                System.setProperty(CHROME_DRIVER_PROPERTY, FileReaderManager.getInstance().getConfigReader().getDriverPath());
+                System.setProperty(CHROME_DRIVER_PROPERTY, FileReaderManager
+                                                            .getInstance()
+                                                            .getConfigReader()
+                                                            .getDriverPath());
                 driver = new ChromeDriver();
                 break;
         }
 
         if (FileReaderManager.getInstance().getConfigReader().getBrowserWindowSize())
             driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(FileReaderManager.getInstance().getConfigReader().getImplicitlyWait(), TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(FileReaderManager.
+                                            getInstance().getConfigReader()
+                                            .getImplicitlyWait(), TimeUnit.SECONDS);
         return driver;
     }
 
